@@ -1,0 +1,330 @@
+/* ---------- PROFILE PAGE PREMIUM DESIGN ---------- */
+
+.profile-page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 180px);
+  padding: 40px 20px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.profile-card-premium {
+  width: 900px;
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Banner Header */
+.profile-header-banner {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(59, 130, 246, 0.05) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 30px 40px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.avatar-glowing-wrapper {
+  position: relative;
+}
+
+.profile-avatar-premium {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  font-weight: 800;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.profile-avatar-premium:hover {
+  transform: scale(1.03);
+}
+
+.profile-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.avatar-camera-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.profile-avatar-premium:hover .avatar-camera-overlay {
+  opacity: 1;
+}
+
+.online-indicator {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #10b981;
+  border: 3.5px solid #0f172a;
+}
+
+.profile-identity h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0 0 6px 0;
+}
+
+.profile-role-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 30px;
+  background: rgba(99, 102, 241, 0.2);
+  color: #a5b4fc;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Info Sections Grid */
+.profile-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  padding: 40px;
+}
+
+@media (max-width: 768px) {
+  .profile-content-grid {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 24px;
+  }
+  .profile-header-banner {
+    padding: 24px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-card-premium {
+    width: 100%;
+  }
+}
+
+.profile-info-section {
+  display: flex;
+  flex-direction: column;
+  background: rgba(15, 23, 42, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.profile-info-section.accent-section {
+  background: rgba(99, 102, 241, 0.03);
+  border-color: rgba(99, 102, 241, 0.08);
+}
+
+.section-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 10px;
+}
+
+.title-icon {
+  font-size: 1.2rem;
+}
+
+.section-title-wrapper h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+.details-read-only {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.03);
+  padding-bottom: 8px;
+}
+
+.info-detail-row:last-child {
+  border: none;
+}
+
+.row-label {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.row-val {
+  color: #f1f5f9;
+  font-weight: 500;
+}
+
+/* Sub-badges for medical stats */
+.row-val.code-style {
+  font-family: monospace;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #38bdf8;
+}
+
+.blood-type-badge {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.allergy-tag {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fde047;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.text-accent-glow {
+  color: #6366f1;
+  text-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+  font-weight: 700;
+}
+
+.file-status-active {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.security-badge {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+/* Edit Form Fields */
+.edit-form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profile-input-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.profile-input-item label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.profile-input-item input {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.profile-input-item input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* Action Button Footer */
+.profile-actions-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 24px 40px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.profile-btn {
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  border: none;
+}
+
+.profile-btn:hover {
+  transform: translateY(-1px);
+}
+
+.edit-btn {
+  background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.edit-btn:hover {
+  background: linear-gradient(135deg, #4f46e5 0%, #2563eb 100%);
+}
+
+.save-btn {
+  background: #10b981;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.cancel-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}

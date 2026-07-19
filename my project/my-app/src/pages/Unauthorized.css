@@ -1,0 +1,129 @@
+.unauthorized-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #f8fafc;
+  padding: 20px;
+}
+
+.unauthorized-card {
+  max-width: 480px;
+  width: 100%;
+  padding: 40px 30px;
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  animation: cardFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.unauthorized-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  margin-bottom: 24px;
+  animation: pulseRed 2s infinite;
+}
+
+.unauthorized-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.unauthorized-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  background: linear-gradient(to right, #f8fafc, #cbd5e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.025em;
+}
+
+.unauthorized-message {
+  font-size: 0.975rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin-bottom: 32px;
+}
+
+.unauthorized-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.unauthorized-btn {
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+}
+
+.unauthorized-btn.primary {
+  background: #6366f1;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+}
+
+.unauthorized-btn.primary:hover {
+  background: #4f46e5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+}
+
+.unauthorized-btn.primary:active {
+  transform: translateY(0);
+}
+
+.unauthorized-btn.secondary {
+  background: rgba(148, 163, 184, 0.1);
+  color: #cbd5e1;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.unauthorized-btn.secondary:hover {
+  background: rgba(148, 163, 184, 0.2);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.unauthorized-btn.secondary:active {
+  transform: translateY(0);
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulseRed {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}

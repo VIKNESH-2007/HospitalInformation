@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FSJ28-INTERN-001 Project Sheet</title>
+    <style>
+        html, body {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 30px 40px;
+            color: #222222;
+            line-height: 1.45;
+            -webkit-font-smoothing: antialiased;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .header-id {
+            color: #0b3c5d;
+            font-size: 26px;
+            font-weight: bold;
+            margin-right: 18px;
+            letter-spacing: -0.5px;
+        }
+        .header-title {
+            color: #111111;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th {
+            background-color: #003366;
+            color: #ffffff;
+            font-size: 13.5px;
+            font-weight: bold;
+            text-align: left;
+            padding: 8px 12px;
+            border: 1px solid #cccccc;
+        }
+        td {
+            padding: 10px 12px;
+            border: 1px solid #cccccc;
+            font-size: 13px;
+            vertical-align: top;
+        }
+        .td-id {
+            font-weight: bold;
+            font-size: 13.5px;
+            width: 15%;
+            line-height: 1.3;
+        }
+        .td-domain {
+            width: 25%;
+            line-height: 1.3;
+        }
+        .td-feature {
+            width: 60%;
+            line-height: 1.4;
+        }
+        h2 {
+            color: #0b3c5d;
+            font-size: 16.5px;
+            font-weight: bold;
+            margin-top: 18px;
+            margin-bottom: 6px;
+        }
+        p {
+            font-size: 13px;
+            margin-top: 0;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+        .columns {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 15px;
+        }
+        .column {
+            flex: 1;
+        }
+        ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 13px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        ol {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 13px;
+        }
+        ol li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-id">FSJ28-INTERN-001</div>
+        <div class="header-title">Hospital Information Management System</div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 15%;">Project ID</th>
+                <th style="width: 25%;">Domain</th>
+                <th style="width: 60%;">AI/ML Feature</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td-id">FSJ28-<br>INTERN-001</td>
+                <td class="td-domain">Hospital Information Management System (HIMS)</td>
+                <td class="td-feature">AI-powered patient record deduplication using fuzzy string matching (Levenshtein Distance) and score classification. Biometric identity verification with facial recognition (liveness check, face embeddings) and fingerprint validation. Automated clinical document compliance check.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Project Idea & Concept</h2>
+    <p>
+        An intelligent Hospital Information Management System (HIMS) that streamlines hospital administration, doctor scheduling, and patient care workflows. The system integrates advanced AI/ML algorithms to resolve patient identity disputes, prevent duplicate medical records, authenticate patients via biometrics (face/fingerprint), automate laboratory reports, manage pharmacy inventory, and facilitate secure compliance audit trails.
+    </p>
+
+    <div class="columns">
+        <div class="column">
+            <h2>Key Modules</h2>
+            <ul>
+                <li>Patient Registration & Onboarding</li>
+                <li>Biometric Identity Verification (Face & Fingerprint)</li>
+                <li>Appointment Scheduling & Doctor Rostering</li>
+                <li>Medical Records & Treatment Schedules</li>
+                <li>Lab Reports & Pharmacy Management</li>
+                <li>Automated Billing & Invoicing</li>
+                <li>Audit Trail & Compliance Reports (HIPAA Review)</li>
+                <li>User & Role Management (Admin, Staff, Patient)</li>
+            </ul>
+        </div>
+        <div class="column">
+            <h2>Architecture Components</h2>
+            <ul>
+                <li>React frontend: patient portal, doctor dashboard, billing and lab console</li>
+                <li>ASP.NET Core Web API: RESTful services for patient records, appointments, pharmacy, billing, and resource management</li>
+                <li>MySQL: database for users, patients, doctors, appointments, billings, prescriptions, lab reports, and audit logs</li>
+                <li>Biometric Matching Service: face embedding comparison, fingerprint alignment, and liveness validation</li>
+                <li>Levenshtein Scoring Algorithm: fuzzy search and duplication classification (LIKELY/POSSIBLE)</li>
+                <li>Security & Audit Logs: HIPAA compliant database transaction auditing</li>
+                <li>Local Storage: secure repository for patient identity proofs and medical documents</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>AI / ML Feature Details</h2>
+    <p>
+        The system integrates fuzzy-matching algorithms to calculate similarity scores (Levenshtein) across name and demographic variations, identifying duplicate records and classifying them as LIKELY or POSSIBLE duplicates. For authentication, face embedding comparisons evaluate selfies against photo IDs with liveness check confirmation, while fingerprint matching validates patient templates to prevent medical identity theft and ensure HIPAA compliance.
+    </p>
+
+    <h2>Recommended Libraries & Tools</h2>
+    <p>
+        ASP.NET Core Web API, Entity Framework Core (ORM), Pomelo.EntityFrameworkCore.MySql, Microsoft.AspNetCore.Authentication.JwtBearer, Swagger/Swashbuckle, React (v18), React Router DOM (v6), Vite, Lucide React (icons), TailwindCSS (for CSS styling), Python (for face/fingerprint embedding processing), OpenCV (biometric verification), NumPy (embedding arrays), Cosine Similarity matching algorithms, Levenshtein string metric library.
+    </p>
+
+    <h2>Implementation Flow (Step-by-Step)</h2>
+    <ol>
+        <li>Staff inputs patient registration details or uploads identity document (Aadhar/PAN)</li>
+        <li>System runs Levenshtein fuzzy match to check for duplicate profiles</li>
+        <li>Staff performs biometric validation (face photo check or fingerprint scan)</li>
+        <li>System returns matching confidence and logs security verification trail</li>
+        <li>Doctor schedules appointment, prescribes medicines, and orders lab tests</li>
+        <li>Billing module auto-calculates dues and updates billing status on patient dashboard</li>
+    </ol>
+
+</body>
+</html>

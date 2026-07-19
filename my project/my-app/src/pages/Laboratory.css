@@ -1,0 +1,86 @@
+.lab-page{
+    min-height:100vh;
+    padding:40px;
+
+    background:
+    linear-gradient(
+        rgba(12,30,55,0.78),
+        rgba(12,30,55,0.78)
+    ),
+    url("https://images.unsplash.com/photo-1579154204601-01588f351e67");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+.lab-title{
+    text-align:center;
+    color:white;
+    font-size:48px;
+    margin-bottom:40px;
+}
+
+.lab-form{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-bottom:40px;
+}
+
+.lab-form input,
+.lab-form select{
+    width:220px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    outline:none;
+}
+
+.add-report-btn{
+    background:#00c853;
+    color:white;
+    border:none;
+    padding:15px 30px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.add-report-btn:hover{
+    background:#00a843;
+}
+
+.report-card-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.report-card{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:30px;
+    color:white;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+.report-card h2{
+    margin-bottom:20px;
+    color:#4fc3f7;
+}
+
+.report-card p{
+    margin:10px 0;
+    font-size:17px;
+}
+
+.card-buttons{
+    margin-top:20px;
+    display:flex;
+    gap:10px;
+}

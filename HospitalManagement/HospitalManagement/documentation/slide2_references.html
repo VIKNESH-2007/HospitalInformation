@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HIMS Slide 2 - References</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        html, body {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            width: 1000px;
+            height: 562px;
+            background-color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+        }
+        .slide-container {
+            width: 1000px;
+            height: 562px;
+            border: 8px solid #002d62;
+            padding: 40px 50px;
+            box-sizing: border-box;
+            background-color: #fcfdfe;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #002d62;
+            padding-bottom: 10px;
+        }
+        .header-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #328cc1;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-right: 15px;
+        }
+        .book-icon {
+            color: #002d62;
+            display: flex;
+            align-items: center;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 50px;
+            row-gap: 15px;
+            flex-grow: 1;
+        }
+        .ref-item {
+            display: flex;
+            flex-direction: column;
+            font-size: 13.5px;
+            line-height: 1.4;
+        }
+        .ref-title {
+            font-weight: bold;
+            color: #222222;
+        }
+        .ref-desc {
+            color: #555555;
+            margin-bottom: 2px;
+        }
+        .ref-link {
+            color: #004b87;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .ref-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide-container">
+        <!-- Slide Header with Book Icon -->
+        <div class="header">
+            <span class="header-title">References</span>
+            <div class="book-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" fill="#002d62"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Two column References List -->
+        <div class="content-grid">
+            <!-- Column 1 -->
+            <div class="ref-item">
+                <span class="ref-title">React Documentation</span>
+                <span class="ref-desc">Frontend JavaScript library for building responsive user interfaces.</span>
+                <a class="ref-link" href="https://react.dev" target="_blank">https://react.dev</a>
+            </div>
+
+            <div class="ref-item">
+                <span class="ref-title">ASP.NET Core Documentation</span>
+                <span class="ref-desc">Backend framework for creating high-performance, cross-platform REST APIs.</span>
+                <a class="ref-link" href="https://learn.microsoft.com/aspnet/core" target="_blank">https://learn.microsoft.com/aspnet/core</a>
+            </div>
+
+            <div class="ref-item">
+                <span class="ref-title">Entity Framework Core Documentation</span>
+                <span class="ref-desc">Object-Relational Mapping (ORM) framework for .NET database connectivity.</span>
+                <a class="ref-link" href="https://learn.microsoft.com/ef/core" target="_blank">https://learn.microsoft.com/ef/core</a>
+            </div>
+
+            <div class="ref-item">
+                <span class="ref-title">MySQL Documentation</span>
+                <span class="ref-desc">Relational database management system for secure and structured transactional storage.</span>
+                <a class="ref-link" href="https://dev.mysql.com/doc/" target="_blank">https://dev.mysql.com/doc/</a>
+            </div>
+
+            <div class="ref-item">
+                <span class="ref-title">JWT (JSON Web Tokens)</span>
+                <span class="ref-desc">Industry-standard authentication tokens for stateless, secure user sessions.</span>
+                <a class="ref-link" href="https://jwt.io" target="_blank">https://jwt.io</a>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="ref-item">
+                <span class="ref-title">Google Authenticator (2FA)</span>
+                <span class="ref-desc">Two-Factor Authentication protocol configuration for clinical identity security.</span>
+                <a class="ref-link" href="https://support.google.com/accounts/answer/1066447" target="_blank">https://support.google.com/accounts/answer/...</a>
+            </div>
+
+            <div class="ref-item">
+                <span class="ref-title">OpenCV Documentation</span>
+                <span class="ref-desc">Computer vision libraries utilized for biometric face and fingerprint alignment checks.</span>
+                <a class="ref-link" href="https://opencv.org" target="_blank">https://opencv.org</a>
+            </div>
+
+            <div class="ref-item">
+                <span class="ref-title">Swagger / OpenAPI</span>
+                <span class="ref-desc">Interactive documentation and testing interface for Hospital API endpoints.</span>
+                <a class="ref-link" href="https://swagger.io/docs/" target="_blank">https://swagger.io/docs/</a>
+            </div>
+
+            <div class="ref-item">
+                <span class="ref-title">Axios Documentation</span>
+                <span class="ref-desc">Promise-based HTTP client for web browser API calls and interceptors.</span>
+                <a class="ref-link" href="https://axios-http.com/docs/intro" target="_blank">https://axios-http.com/docs/intro</a>
+            </div>
+
+            <div class="ref-item">
+                <span class="ref-title">Microsoft Learn - C# Guide</span>
+                <span class="ref-desc">Object-oriented programming language documentation used for backend HIMS logic.</span>
+                <a class="ref-link" href="https://learn.microsoft.com/dotnet/csharp/" target="_blank">https://learn.microsoft.com/dotnet/csharp/</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

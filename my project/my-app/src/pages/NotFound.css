@@ -1,0 +1,97 @@
+/* ---------- NOT FOUND PAGE ---------- */
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+
+    /* Professional Hospital Background */
+    background-image:
+    linear-gradient(rgba(18,43,74,.60), rgba(18,43,74,.60)),
+    url("https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+.notfound-container{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.notfound-card{
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(8px);
+    padding:40px;
+    border-radius:18px;
+    box-shadow:0 12px 30px rgba(0,0,0,.30);
+    width:500px;
+}
+
+.notfound-title{
+    font-size:100px;
+    color:#dc3545;
+    margin:0;
+}
+
+.notfound-subtitle{
+    font-size:30px;
+    color:#333;
+    margin:20px 0;
+}
+
+.notfound-text{
+    font-size:18px;
+    color:#666;
+    margin-bottom:30px;
+}
+
+.notfound-link{
+    display:inline-block;
+    text-decoration:none;
+    background:#0d6efd;
+    color:white;
+    padding:14px 28px;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.notfound-link:hover{
+    background:#084298;
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(13,110,253,.35);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width:600px){
+
+    .notfound-card{
+        width:90%;
+        padding:25px;
+    }
+
+    .notfound-title{
+        font-size:80px;
+    }
+
+    .notfound-subtitle{
+        font-size:24px;
+    }
+
+    .notfound-text{
+        font-size:16px;
+    }
+
+    .notfound-link{
+        width:100%;
+        box-sizing:border-box;
+    }
+}

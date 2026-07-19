@@ -1,0 +1,112 @@
+.pharmacy-page{
+    min-height:100vh;
+    padding:30px;
+    position:relative;
+
+    background:
+    linear-gradient(
+        rgba(0,40,85,0.70),
+        rgba(0,40,85,0.70)
+    ),
+    url("https://images.unsplash.com/photo-1587854692152-cbe660dbde88");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+}
+
+.pharmacy-content{
+    position:relative;
+    z-index:2;
+}
+
+.page-title{
+    text-align:center;
+    color:white;
+    font-size:45px;
+    margin-bottom:30px;
+}
+
+.add-form{
+    display:flex;
+    gap:15px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+
+.add-form input{
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    width:220px;
+    outline:none;
+}
+
+.add-btn{
+    background:#00c853;
+    color:white;
+    border:none;
+    padding:15px 25px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+}
+
+.add-btn:hover{
+    background:#00a843;
+}
+
+.pharmacy-table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:20px;
+    background:rgba(255,255,255,0.90);
+    backdrop-filter:blur(10px);
+}
+
+.pharmacy-table th{
+    background:#1976d2;
+    color:white;
+    padding:18px;
+}
+
+.pharmacy-table td{
+    padding:20px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+.pharmacy-table tr:nth-child(even){
+    background:#f5f7fb;
+}
+
+.pharmacy-table tr:hover{
+    background:#dfefff;
+}
+
+@media(max-width:900px){
+
+    .add-form{
+        flex-direction:column;
+    }
+
+    .add-form input{
+        width:100%;
+    }
+
+    .pharmacy-table{
+        display:block;
+        overflow-x:auto;
+    }
+}

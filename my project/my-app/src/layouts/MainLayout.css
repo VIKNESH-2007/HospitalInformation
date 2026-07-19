@@ -1,0 +1,262 @@
+.layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #0f172a;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.content-area-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 100px; /* Leave room for sticky footer */
+}
+
+/* Sticky Wizard Footer */
+.wizard-footer {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  z-index: 100;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.wizard-stepper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  overflow-x: auto;
+  padding: 4px 0;
+}
+
+/* Stepper styles */
+.stepper-dot-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.stepper-dot-wrapper:hover .stepper-dot {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.stepper-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #1e293b;
+  border: 2px solid #334155;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  transition: all 0.2s ease;
+}
+
+.stepper-dot-wrapper.active .stepper-dot {
+  background: #6366f1;
+  border-color: #6366f1;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.5);
+}
+
+.stepper-dot-wrapper.completed .stepper-dot {
+  background: #10b981;
+  border-color: #10b981;
+  color: #ffffff;
+}
+
+.stepper-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.stepper-dot-wrapper.active .stepper-label {
+  color: #e2e8f0;
+}
+
+.stepper-dot-wrapper.completed .stepper-label {
+  color: #a7f3d0;
+}
+
+.stepper-line {
+  height: 2px;
+  background: #334155;
+  flex: 1;
+  min-width: 20px;
+  max-width: 60px;
+  margin-top: -12px;
+}
+
+.stepper-line.completed {
+  background: #10b981;
+}
+
+/* Wizard Actions */
+.wizard-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.wizard-btn {
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wizard-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.back-btn {
+  background: rgba(148, 163, 184, 0.15);
+  color: #cbd5e1;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.back-btn:hover:not(:disabled) {
+  background: rgba(148, 163, 184, 0.25);
+  color: #ffffff;
+}
+
+.next-btn {
+  background: #6366f1;
+  color: #ffffff;
+}
+
+.next-btn:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+}
+
+.submit-btn {
+  background: #10b981;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.submit-btn:hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+/* Success Modal Overlay */
+.workflow-success-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.workflow-success-modal {
+  max-width: 420px;
+  width: 100%;
+  padding: 40px 30px;
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  animation: modalScaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.success-icon {
+  width: 72px;
+  height: 72px;
+  background: rgba(16, 185, 129, 0.15);
+  border-radius: 50%;
+  color: #10b981;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  margin-bottom: 24px;
+  animation: pulseGreen 2s infinite;
+}
+
+.workflow-success-modal h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #f8fafc;
+  margin-bottom: 12px;
+}
+
+.workflow-success-modal p {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.success-close-btn {
+  width: 100%;
+  padding: 12px;
+  background: #6366f1;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.success-close-btn:hover {
+  background: #4f46e5;
+}
+
+@keyframes modalScaleUp {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulseGreen {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}

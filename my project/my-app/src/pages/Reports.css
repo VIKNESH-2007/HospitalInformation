@@ -1,0 +1,144 @@
+.reports-page{
+    min-height:100vh;
+    position:relative;
+    padding:40px;
+
+    background:
+    linear-gradient(
+        rgba(10,25,50,0.65),
+        rgba(10,25,50,0.65)
+    ),
+    url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+}
+
+.reports-container{
+    position:relative;
+    z-index:2;
+}
+
+.reports-title{
+    text-align:center;
+    color:white;
+    font-size:48px;
+    margin-bottom:30px;
+    font-weight:700;
+}
+
+.report-actions{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-bottom:40px;
+}
+
+.export-btn,
+.download-btn{
+    padding:14px 30px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.export-btn{
+    background:#1976d2;
+    color:white;
+}
+
+.export-btn:hover{
+    transform:translateY(-3px);
+}
+
+.download-btn{
+    background:#4caf50;
+    color:white;
+}
+
+.download-btn:hover{
+    transform:translateY(-3px);
+}
+
+.cards-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    margin-bottom:50px;
+}
+
+.report-card{
+    background:rgba(255,255,255,0.18);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.3);
+    border-radius:20px;
+    padding:40px;
+    text-align:center;
+    color:white;
+    transition:0.4s;
+}
+
+.report-card:hover{
+    transform:translateY(-10px) scale(1.03);
+}
+
+.report-icon{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.report-card h2{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.report-card p{
+    font-size:18px;
+}
+
+.statistics-section{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.stat-box{
+    background:rgba(255,255,255,0.18);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    padding:30px;
+    color:white;
+}
+
+.progress-bar{
+    width:100%;
+    height:28px;
+    background:rgba(255,255,255,0.3);
+    border-radius:30px;
+    overflow:hidden;
+    margin-top:15px;
+}
+
+.progress-fill{
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        #00c6ff,
+        #0072ff
+    );
+    text-align:center;
+    color:white;
+    font-weight:bold;
+    line-height:28px;
+    border-radius:30px;
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HIMS Slide 1 - Thank You</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        html, body {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            width: 1000px;
+            height: 562px;
+            background-color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+        }
+        .slide-container {
+            position: relative;
+            width: 1000px;
+            height: 562px;
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+            border: 8px solid #002d62;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 80px;
+        }
+        /* Top-Left decorative background */
+        .decor-top-left {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: 250px;
+            height: 120px;
+            background: #004b87;
+            border-bottom-right-radius: 120px 120px;
+            z-index: 1;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+        }
+        .decor-dots-top {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            width: 80px;
+            height: 35px;
+            background-image: radial-gradient(#ffffff 20%, transparent 20%);
+            background-size: 8px 8px;
+            z-index: 2;
+            opacity: 0.8;
+        }
+        /* Bottom-Right decorative background */
+        .decor-bottom-right {
+            position: absolute;
+            bottom: -5px;
+            right: -5px;
+            width: 250px;
+            height: 120px;
+            background: #004b87;
+            border-top-left-radius: 120px 120px;
+            z-index: 1;
+            box-shadow: -2px -2px 8px rgba(0,0,0,0.1);
+        }
+        .decor-dots-bottom {
+            position: absolute;
+            bottom: 20px;
+            right: 25px;
+            width: 80px;
+            height: 35px;
+            background-image: radial-gradient(#ffffff 20%, transparent 20%);
+            background-size: 8px 8px;
+            z-index: 2;
+            opacity: 0.8;
+        }
+        
+        .left-content {
+            flex: 1;
+            z-index: 3;
+            margin-top: 40px;
+        }
+        .thank-you-text {
+            font-size: 84px;
+            font-weight: 800;
+            color: #002d62;
+            line-height: 0.9;
+            letter-spacing: -2px;
+            margin-bottom: 25px;
+        }
+        .divider-container {
+            display: flex;
+            align-items: center;
+            width: 320px;
+        }
+        .line {
+            flex: 1;
+            height: 2px;
+            background-color: #004b87;
+        }
+        .shield-icon {
+            margin: 0 15px;
+            color: #004b87;
+            display: flex;
+            align-items: center;
+        }
+        
+        .right-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3;
+        }
+        .svg-graphics {
+            width: 420px;
+            height: 420px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide-container">
+        <!-- Corner decorations -->
+        <div class="decor-top-left"></div>
+        <div class="decor-dots-top"></div>
+        <div class="decor-bottom-right"></div>
+        <div class="decor-dots-bottom"></div>
+
+        <!-- Left Content: THANK YOU! -->
+        <div class="left-content">
+            <div class="thank-you-text">THANK<br>YOU!</div>
+            <div class="divider-container">
+                <div class="line"></div>
+                <div class="shield-icon">
+                    <!-- SVG Shield Check -->
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="#004b87"/>
+                        <path d="m9 12 2 2 4-4" stroke="#ffffff"/>
+                    </svg>
+                </div>
+                <div class="line"></div>
+            </div>
+        </div>
+
+        <!-- Right Content: Medical/HIMS protected illustrations -->
+        <div class="right-content">
+            <svg class="svg-graphics" viewBox="0 0 400 400" fill="none">
+                <!-- Skyline silhouette background -->
+                <path d="M20 330 h360 v10 h-360 z" fill="#d1e3f8"/>
+                <path d="M50 330 v-80 h30 v80 M100 330 v-120 h40 v120 M290 330 v-70 h30 v70 M340 330 v-100 h30 v100" fill="#e1edf9"/>
+                
+                <!-- Stethoscope graphic on the left -->
+                <path d="M70 280 c-10-10-20-5-20 15 c0 25 30 40 40 40 s40-15 40-40 c0-20-10-25-20-15" stroke="#328cc1" stroke-width="6" stroke-linecap="round" fill="none"/>
+                <path d="M90 320 c0 15-10 30-25 30 s-25-15-25-30" stroke="#328cc1" stroke-width="6" fill="none"/>
+                
+                <!-- Hospital Building -->
+                <g transform="translate(240, 200)">
+                    <rect width="110" height="130" rx="8" fill="#ffffff" stroke="#002d62" stroke-width="5"/>
+                    <rect x="15" y="15" width="20" height="20" rx="3" fill="#e1edf9"/>
+                    <rect x="45" y="15" width="20" height="20" rx="3" fill="#e1edf9"/>
+                    <rect x="75" y="15" width="20" height="20" rx="3" fill="#e1edf9"/>
+                    <rect x="15" y="45" width="20" height="20" rx="3" fill="#e1edf9"/>
+                    <rect x="45" y="45" width="20" height="20" rx="3" fill="#e1edf9"/>
+                    <rect x="75" y="45" width="20" height="20" rx="3" fill="#e1edf9"/>
+                    <!-- Doors -->
+                    <path d="M40 130 v-30 h30 v30" fill="#004b87"/>
+                    <!-- Red Cross -->
+                    <rect x="47" y="78" width="16" height="6" rx="1" fill="#ff4d4d"/>
+                    <rect x="52" y="73" width="6" height="16" rx="1" fill="#ff4d4d"/>
+                </g>
+
+                <!-- Clipboard (Patient Record) -->
+                <g transform="translate(130, 160)">
+                    <rect width="110" height="140" rx="8" fill="#ffffff" stroke="#002d62" stroke-width="6"/>
+                    <!-- Header -->
+                    <rect x="25" y="-12" width="60" height="20" rx="5" fill="#328cc1" stroke="#002d62" stroke-width="5"/>
+                    <circle cx="55" cy="-2" r="4" fill="#ffffff"/>
+                    <!-- Checkmarks & Lines -->
+                    <g transform="translate(15, 30)">
+                        <!-- Check 1 -->
+                        <path d="M5 10 l4 4 l8-8" stroke="#28a745" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="25" y1="10" x2="80" y2="10" stroke="#002d62" stroke-width="4" stroke-linecap="round"/>
+                        <!-- Check 2 -->
+                        <path d="M5 35 l4 4 l8-8" stroke="#28a745" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="25" y1="35" x2="80" y2="35" stroke="#002d62" stroke-width="4" stroke-linecap="round"/>
+                        <!-- Check 3 -->
+                        <path d="M5 60 l4 4 l8-8" stroke="#28a745" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="25" y1="60" x2="80" y2="60" stroke="#002d62" stroke-width="4" stroke-linecap="round"/>
+                    </g>
+                    <!-- HIMS Title -->
+                    <text x="55" y="24" fill="#002d62" font-family="'Inter', sans-serif" font-weight="bold" font-size="12" text-anchor="middle">HIMS RECORD</text>
+                </g>
+
+                <!-- Security Shield Check on front -->
+                <g transform="translate(210, 240)">
+                    <path d="M0 45 C0 45 0 0 35 0 C70 0 70 45 70 45 C70 70 35 90 35 90 C35 90 0 70 0 45 Z" fill="#004b87" stroke="#002d62" stroke-width="5"/>
+                    <path d="M20 42 l10 10 l20-20" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </g>
+
+                <!-- Big Blue Protective Umbrella above HIMS Clipboard & Hospital -->
+                <g transform="translate(110, 30)">
+                    <!-- Shaft -->
+                    <line x1="75" y1="120" x2="75" y2="15" stroke="#222222" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M75 120 c0 10 10 10 10 0" stroke="#222222" stroke-width="5" stroke-linecap="round" fill="none"/>
+                    <!-- Canopy -->
+                    <path d="M5 70 C5 20 145 20 145 70 C145 70 125 55 110 70 C95 55 80 55 75 70 C70 55 55 55 40 70 C25 55 5 70 5 70 Z" fill="#004b87" stroke="#002d62" stroke-width="5" stroke-linejoin="round"/>
+                    <path d="M75 18 C75 18 75 12 75 12" stroke="#222222" stroke-width="5" stroke-linecap="round"/>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+</body>
+</html>

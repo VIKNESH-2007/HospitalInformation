@@ -1,0 +1,16 @@
+.date-group{
+display:flex;
+flex-direction:column;
+}
+
+.date-group label{
+margin-bottom:8px;
+font-weight:600;
+}
+
+.date-group input{
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:15px;
+}

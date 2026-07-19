@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HIMS Slide 4 - Technical Stack & System Architecture</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        html, body {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            width: 1000px;
+            height: 562px;
+            background-color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+        }
+        .slide-container {
+            width: 1000px;
+            height: 562px;
+            border: 8px solid #002d62;
+            box-sizing: border-box;
+            background-color: #f4f7f9;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Headers */
+        .top-header {
+            background-color: #002d62;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .sub-header {
+            background-color: #0d233a;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #328cc1;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .main-content {
+            display: flex;
+            flex: 1;
+            padding: 6px;
+            gap: 6px;
+            box-sizing: border-box;
+            height: calc(100% - 58px);
+        }
+
+        /* Title Bars for Columns */
+        .column-title {
+            background-color: #004b87;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            text-align: center;
+            padding: 4px;
+            border-radius: 4px;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* Left Panel - Technical Stack */
+        .tech-stack-panel {
+            width: 200px;
+            background-color: #ffffff;
+            border: 1px solid #d1dbdf;
+            border-radius: 6px;
+            padding: 6px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .stack-box {
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            padding: 4px 6px;
+            font-size: 10px;
+            line-height: 1.25;
+            background-color: #fafbfc;
+        }
+        .stack-box-title {
+            font-weight: 700;
+            color: #004b87;
+            margin-bottom: 2px;
+            text-transform: uppercase;
+            font-size: 9.5px;
+        }
+        .stack-box ul {
+            margin: 0;
+            padding-left: 10px;
+            list-style-type: disc;
+        }
+        .stack-box li {
+            color: #333;
+        }
+
+        /* Right Panel - Architecture & Diagrams */
+        .architecture-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            box-sizing: border-box;
+        }
+        
+        .sys-arch-box {
+            background-color: #ffffff;
+            border: 1px solid #d1dbdf;
+            border-radius: 6px;
+            padding: 6px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        /* 4-Layer Architecture Diagram */
+        .diagram-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            gap: 4px;
+            flex: 1;
+            margin-top: 2px;
+        }
+        .layer-column {
+            flex: 1;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            background-color: #f8fafc;
+            padding: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+        }
+        .layer-title {
+            font-size: 9px;
+            font-weight: 700;
+            color: #475569;
+            background-color: #e2e8f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+        .layer-box {
+            background-color: #ffffff;
+            border: 1.5px solid #004b87;
+            border-radius: 4px;
+            padding: 4px;
+            width: 90%;
+            text-align: center;
+            font-size: 9px;
+            margin-bottom: 4px;
+            box-sizing: border-box;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .layer-box.accent {
+            border-color: #328cc1;
+        }
+        .arrow-indicator {
+            align-self: center;
+            color: #64748b;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        
+        .side-service-box {
+            width: 85px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .service-card {
+            background-color: #fafbfc;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            padding: 4px;
+            text-align: center;
+            font-size: 9px;
+            font-weight: 500;
+            box-sizing: border-box;
+        }
+
+        /* Cross Cutting Concerns */
+        .ccc-container {
+            background-color: #ffffff;
+            border: 1px solid #d1dbdf;
+            border-radius: 6px;
+            padding: 5px 6px;
+            box-sizing: border-box;
+        }
+        .ccc-title {
+            font-size: 10px;
+            font-weight: 700;
+            color: #002d62;
+            margin-bottom: 4px;
+            text-align: center;
+            letter-spacing: 0.5px;
+            border-bottom: 1.5px solid #cbd5e1;
+            padding-bottom: 2px;
+        }
+        .ccc-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 4px;
+        }
+        .ccc-item {
+            border: 1px solid #e2e8f0;
+            border-radius: 3px;
+            padding: 3px 2px;
+            text-align: center;
+            font-size: 8.5px;
+            font-weight: 600;
+            color: #334155;
+            background-color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            line-height: 1.1;
+        }
+        .ccc-item svg {
+            margin-bottom: 2px;
+            color: #004b87;
+        }
+
+        /* Bottom Section: Infrastructure & Highlights */
+        .bottom-sections {
+            display: flex;
+            gap: 6px;
+            height: 110px;
+        }
+        .infra-panel {
+            flex: 1.1;
+            background-color: #ffffff;
+            border: 1px solid #d1dbdf;
+            border-radius: 6px;
+            padding: 6px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        .infra-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-grow: 1;
+            padding: 0 4px;
+        }
+        .infra-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 8px;
+            font-weight: 600;
+            color: #475569;
+            text-align: center;
+            width: 48px;
+        }
+        .infra-step-icon {
+            background-color: #eef6fc;
+            border: 1px solid #328cc1;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3px;
+            color: #004b87;
+        }
+        .infra-arrow {
+            font-size: 10px;
+            color: #94a3b8;
+            font-weight: 700;
+        }
+
+        .highlights-panel {
+            flex: 1.2;
+            background-color: #ffffff;
+            border: 1px solid #d1dbdf;
+            border-radius: 6px;
+            padding: 6px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        .highlights-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 10px;
+            flex-grow: 1;
+            padding: 2px 5px;
+        }
+        .hl-item {
+            font-size: 8.5px;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+        .hl-check {
+            color: #22c55e;
+            font-weight: 700;
+            margin-right: 4px;
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide-container">
+        <!-- Main Slide Headers -->
+        <div class="top-header">HOSPITAL INFORMATION MANAGEMENT SYSTEM</div>
+        <div class="sub-header">TECHNICAL STACK & SYSTEM ARCHITECTURE</div>
+
+        <div class="main-content">
+            <!-- Left Panel: Technical Stack -->
+            <div class="tech-stack-panel">
+                <div class="column-title">Technical Stack</div>
+                
+                <div class="stack-box">
+                    <div class="stack-box-title">Frontend</div>
+                    <ul>
+                        <li>React.js (v18)</li>
+                        <li>HTML5 & CSS3</li>
+                        <li>TailwindCSS</li>
+                    </ul>
+                </div>
+                
+                <div class="stack-box">
+                    <div class="stack-box-title">Backend</div>
+                    <ul>
+                        <li>ASP.NET Core Web API</li>
+                        <li>Entity Framework Core</li>
+                        <li>C# 12</li>
+                    </ul>
+                </div>
+                
+                <div class="stack-box">
+                    <div class="stack-box-title">Database</div>
+                    <ul>
+                        <li>MySQL Relational DB</li>
+                    </ul>
+                </div>
+                
+                <div class="stack-box">
+                    <div class="stack-box-title">Auth & Security</div>
+                    <ul>
+                        <li>JWT Authentication</li>
+                        <li>Google Authenticator (2FA)</li>
+                    </ul>
+                </div>
+                
+                <div class="stack-box">
+                    <div class="stack-box-title">AI & ML Features</div>
+                    <ul>
+                        <li>Levenshtein Fuzzy Match</li>
+                        <li>Face Embedding Match</li>
+                    </ul>
+                </div>
+
+                <div class="stack-box" style="margin-bottom: 0;">
+                    <div class="stack-box-title">Tools</div>
+                    <ul>
+                        <li>VS Code & Git</li>
+                        <li>Swagger UI / OpenAPI</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Panel: Architecture Diagram, CCC, Highlights -->
+            <div class="architecture-panel">
+                <!-- System Architecture Diagram -->
+                <div class="sys-arch-box">
+                    <div class="column-title" style="margin-bottom: 4px;">System Architecture</div>
+                    
+                    <div class="diagram-container">
+                        <!-- Client Layer -->
+                        <div class="layer-column">
+                            <span class="layer-title">Client Layer</span>
+                            <div class="layer-box">Patient Portal</div>
+                            <div class="layer-box">Staff Console</div>
+                            <div class="layer-box">Doctor Dashboard</div>
+                            <div class="layer-box accent" style="font-weight: 600; background-color: #f1f5f9; border-style: dashed;">Responsive UI</div>
+                        </div>
+                        
+                        <div class="arrow-indicator">↔</div>
+                        
+                        <!-- Presentation Layer -->
+                        <div class="layer-column" style="flex: 0.9;">
+                            <span class="layer-title">Presentation</span>
+                            <div class="layer-box" style="margin-top: 15px;">React.js Web App</div>
+                            <div class="layer-box accent" style="font-size: 8px; color: #475569;">HTML5 / CSS3 / Axios</div>
+                        </div>
+                        
+                        <div class="arrow-indicator">↔</div>
+                        
+                        <!-- Application Layer -->
+                        <div class="layer-column" style="flex: 1.1;">
+                            <span class="layer-title">Application Layer</span>
+                            <div class="layer-box" style="font-weight: 600; color: #002d62; background-color: #eef6fc;">ASP.NET Web API</div>
+                            <div class="layer-box" style="font-size: 8px; text-align: left; padding-left: 8px; line-height: 1.2;">
+                                • User & Patient Records<br>
+                                • Doctor Scheduling<br>
+                                • Billing & Pharmacy<br>
+                                • Lab Reports & Audits
+                            </div>
+                        </div>
+                        
+                        <div class="arrow-indicator">↔</div>
+                        
+                        <!-- Data Layer -->
+                        <div class="layer-column" style="flex: 1.1;">
+                            <span class="layer-title">Data Layer</span>
+                            <div class="layer-box" style="font-weight: 600; color: #002d62; background-color: #eef6fc;">MySQL Database</div>
+                            <div class="layer-box" style="font-size: 8px; text-align: left; padding-left: 8px; line-height: 1.2;">
+                                • Patient & Doctor DB<br>
+                                • Billing & Prescr. DB<br>
+                                • System Settings DB<br>
+                                • Compliance Audit DB
+                            </div>
+                        </div>
+                        
+                        <div class="arrow-indicator">↔</div>
+                        
+                        <!-- External & Integrations -->
+                        <div class="side-service-box">
+                            <span class="layer-title" style="width: 100%;">Services</span>
+                            <div class="service-card">Email (SMTP)</div>
+                            <div class="service-card">SMS Service</div>
+                            <div class="service-card">Google 2FA</div>
+                            <div class="service-card">Biometric API</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cross Cutting Concerns -->
+                <div class="ccc-container">
+                    <div class="ccc-title">Cross Cutting Concerns (Project Specific)</div>
+                    <div class="ccc-grid">
+                        <div class="ccc-item">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            Auth & JWT
+                        </div>
+                        <div class="ccc-item">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            Input Validation
+                        </div>
+                        <div class="ccc-item">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            Error Handling
+                        </div>
+                        <div class="ccc-item">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            HIPAA Audit Logs
+                        </div>
+                        <div class="ccc-item">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+                            Data Encryption
+                        </div>
+                        <div class="ccc-item">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                            File Security
+                        </div>
+                        <div class="ccc-item">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            Session Mgmt
+                        </div>
+                        <div class="ccc-item">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                            Real-time Alerts
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Section: Deployment Flow & Architecture Highlights -->
+                <div class="bottom-sections">
+                    <!-- Infrastructure Flow -->
+                    <div class="infra-panel">
+                        <div class="column-title" style="font-size: 9.5px; padding: 2px;">Infrastructure & Deployment Flow</div>
+                        <div class="infra-flow">
+                            <div class="infra-step">
+                                <div class="infra-step-icon">💻</div>
+                                <span>Code Dev</span>
+                            </div>
+                            <span class="infra-arrow">→</span>
+                            <div class="infra-step">
+                                <div class="infra-step-icon">🐙</div>
+                                <span>GitHub</span>
+                            </div>
+                            <span class="infra-arrow">→</span>
+                            <div class="infra-step">
+                                <div class="infra-step-icon">⚙️</div>
+                                <span>Build</span>
+                            </div>
+                            <span class="infra-arrow">→</span>
+                            <div class="infra-step">
+                                <div class="infra-step-icon">🧪</div>
+                                <span>Test</span>
+                            </div>
+                            <span class="infra-arrow">→</span>
+                            <div class="infra-step">
+                                <div class="infra-step-icon">☁️</div>
+                                <span>Deploy</span>
+                            </div>
+                            <span class="infra-arrow">→</span>
+                            <div class="infra-step">
+                                <div class="infra-step-icon">🌐</div>
+                                <span>Kestrel</span>
+                            </div>
+                            <span class="infra-arrow">→</span>
+                            <div class="infra-step">
+                                <div class="infra-step-icon">🗄️</div>
+                                <span>MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Highlights -->
+                    <div class="highlights-panel">
+                        <div class="column-title" style="font-size: 9.5px; padding: 2px;">Architecture Highlights</div>
+                        <div class="highlights-list">
+                            <div class="hl-item"><span class="hl-check">✔</span>Layered N-Tier Architecture</div>
+                            <div class="hl-item"><span class="hl-check">✔</span>AI Patient Deduplication (Levenshtein)</div>
+                            <div class="hl-item"><span class="hl-check">✔</span>Secure JWT Auth + Biometric Login</div>
+                            <div class="hl-item"><span class="hl-check">✔</span>Centralized Lab & Pharmacy Inventory</div>
+                            <div class="hl-item"><span class="hl-check">✔</span>HIPAA Security Audit Logging</div>
+                            <div class="hl-item"><span class="hl-check">✔</span>Role-Based Clinical Permissions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

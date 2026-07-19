@@ -1,0 +1,416 @@
+/* CSS Variables for Premium Theme - Shared with Login */
+:root {
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --secondary-color: #06b6d4;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --bg-light: #f8fafc;
+  --error-color: #ef4444;
+  --error-bg: #fef2f2;
+  --border-color: #e2e8f0;
+  --success-color: #10b981;       /* Green 500 */
+  --success-bg: #ecfdf5;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Reset modifications local to page wrapper */
+.register-page-wrapper * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.register-page-wrapper {
+  background: radial-gradient(circle at 10% 20%, rgba(243, 244, 246, 1) 0%, rgba(229, 231, 235, 1) 90%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.register-container {
+  display: flex;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 24px;
+  width: 1000px;
+  max-width: 100%;
+  min-height: 600px;
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* BRAND PANEL (LEFT SIDE) */
+.brand-panel {
+  flex: 1.1;
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #4338ca 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 60px;
+  color: white;
+  overflow: hidden;
+}
+
+/* Subtle background shapes */
+.brand-panel::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.2) 0%, transparent 70%);
+  filter: blur(20px);
+}
+
+.brand-panel::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -10%;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.3) 0%, transparent 70%);
+  filter: blur(30px);
+}
+
+.brand-panel-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 60px;
+}
+
+.logo-icon {
+  font-size: 28px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.brand-logo h2 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.brand-text h1 {
+  font-size: 40px;
+  font-weight: 750;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  background: linear-gradient(120deg, #ffffff 40%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #cbd5e1;
+  font-weight: 300;
+}
+
+.brand-stats {
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+  gap: 30px;
+}
+
+.stat-item h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+.stat-item p {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* FORM PANEL (RIGHT SIDE) */
+.register-form-panel {
+  flex: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background: #ffffff;
+  overflow-y: auto;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 380px;
+}
+
+.register-header {
+  margin-bottom: 28px;
+}
+
+.register-header h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.5px;
+}
+
+.register-header p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* Alert Boxes */
+.error-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--error-bg);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  animation: slideIn 0.3s ease;
+}
+
+.success-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--success-bg);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  animation: slideIn 0.3s ease;
+}
+
+.alert-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.error-alert p {
+  font-size: 13px;
+  color: var(--error-color);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.success-alert p {
+  font-size: 13px;
+  color: var(--success-color);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Fields */
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 16px 14px 12px;
+  font-size: 15px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  outline: none;
+  background: transparent;
+  color: var(--text-dark);
+  transition: all 0.2s ease;
+}
+
+.input-group input[type="password"]::-ms-reveal,
+.input-group input[type="password"]::-ms-clear {
+  display: none;
+}
+
+.input-group label {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #ffffff;
+  padding: 0 4px;
+}
+
+/* Floating behavior */
+.input-group input:focus,
+.input-group input:not(:placeholder-shown) {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+  top: 0;
+  font-size: 12px;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Password positioning */
+.password-group {
+  display: flex;
+  align-items: center;
+}
+
+.password-group input {
+  padding-right: 48px;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.password-toggle-btn:hover {
+  color: var(--text-dark);
+  background: var(--bg-light);
+}
+
+/* Register Action Button */
+.register-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+  margin-top: 8px;
+}
+
+.register-btn:hover:not(:disabled) {
+  background: var(--primary-hover);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.35);
+  transform: translateY(-1px);
+}
+
+.register-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.register-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Footer Section */
+.register-footer {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.register-footer p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.login-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.login-link:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .register-container {
+    width: 480px;
+    min-height: auto;
+  }
+  .brand-panel {
+    display: none;
+  }
+  .register-form-panel {
+    flex: 1;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .register-page-wrapper {
+    padding: 10px;
+  }
+  .register-container {
+    border-radius: 16px;
+  }
+  .register-form-panel {
+    padding: 30px 20px;
+  }
+}

@@ -1,0 +1,218 @@
+.search-actions-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 20px;
+}
+
+.add-patient-btn {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: inherit;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.add-patient-btn:hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+.patients-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  color: #334155;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.patients-table th {
+  background: #1e293b;
+  color: #f8fafc;
+  padding: 16px;
+  text-align: left;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #334155;
+}
+
+.patients-table td {
+  padding: 16px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.patients-table tr:hover {
+  background: #f8fafc;
+}
+
+.patient-name-cell {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.no-records-cell {
+  text-align: center;
+  color: #64748b;
+  padding: 32px !important;
+}
+
+.table-loading {
+  text-align: center;
+  color: #94a3b8;
+  padding: 40px;
+  font-size: 0.95rem;
+}
+
+.patient-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Patient Form Styles */
+.patient-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #f8fafc;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-group-row .form-group {
+  flex: 1;
+}
+
+.patient-form label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+}
+
+.patient-form input,
+.patient-form select,
+.patient-form textarea {
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #f8fafc;
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.patient-form input:focus,
+.patient-form select:focus,
+.patient-form textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.patient-form textarea {
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.cancel-form-btn {
+  background: rgba(148, 163, 184, 0.1);
+  color: #cbd5e1;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-form-btn:hover {
+  background: rgba(148, 163, 184, 0.2);
+}
+
+.submit-form-btn {
+  background: #6366f1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.submit-form-btn:hover {
+  background: #4f46e5;
+}
+
+/* Patient View Modal Styles */
+.patient-details-view {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 10px;
+}
+
+.detail-item strong {
+  color: #94a3b8;
+}
+
+.modal-close-btn {
+  background: #6366f1;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background: #4f46e5;
+}
+
+.active-tab-btn {
+  border: 2px solid white !important;
+  color: white !important;
+}

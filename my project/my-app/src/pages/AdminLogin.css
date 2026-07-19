@@ -1,0 +1,416 @@
+/* CSS Variables for Premium Admin Theme */
+:root {
+  --admin-primary: #dc2626;         /* Red/Crimson Accent */
+  --admin-primary-hover: #b91c1c;
+  --admin-accent: #f97316;          /* Orange Accent */
+  --admin-navy-dark: #0f172a;       /* Slate 900 */
+  --admin-navy-medium: #1e293b;     /* Slate 800 */
+  --admin-text-light: #f8fafc;      /* Slate 50 */
+  --admin-text-muted: #94a3b8;      /* Slate 400 */
+  --admin-border-color: #334155;    /* Slate 700 */
+  --admin-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+}
+
+/* Reset modifications local to page wrapper */
+.admin-login-page-wrapper * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.admin-login-page-wrapper {
+  background: radial-gradient(circle at 10% 20%, #0f172a 0%, #020617 90%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.admin-login-container {
+  display: flex;
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 24px;
+  width: 1000px;
+  max-width: 100%;
+  min-height: 600px;
+  box-shadow: var(--admin-shadow-xl);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+/* BRAND PANEL (LEFT SIDE) */
+.admin-brand-panel {
+  flex: 1.1;
+  background: linear-gradient(135deg, #180808 0%, #1e1b4b 50%, #0f172a 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 60px;
+  color: white;
+  overflow: hidden;
+}
+
+/* Subtle background accent shapes */
+.admin-brand-panel::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
+  filter: blur(25px);
+}
+
+.admin-brand-panel-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.admin-brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 60px;
+}
+
+.admin-logo-icon {
+  font-size: 28px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-brand-logo h2 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.admin-brand-text h1 {
+  font-size: 40px;
+  font-weight: 750;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  background: linear-gradient(120deg, #ffffff 40%, #f97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.admin-brand-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #cbd5e1;
+  font-weight: 300;
+}
+
+.admin-brand-stats {
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+  gap: 30px;
+}
+
+.admin-stat-item h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--admin-accent);
+}
+
+.admin-stat-item p {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.admin-stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* FORM PANEL (RIGHT SIDE) */
+.admin-login-form-panel {
+  flex: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background: #0f172a;
+}
+
+.admin-login-card {
+  width: 100%;
+  max-width: 380px;
+}
+
+.admin-login-header {
+  margin-bottom: 32px;
+}
+
+.admin-login-header h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--admin-text-light);
+  letter-spacing: -0.5px;
+}
+
+.admin-login-header p {
+  font-size: 14px;
+  color: var(--admin-text-muted);
+  margin-top: 6px;
+}
+
+/* Error Alert Box */
+.admin-error-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  animation: adminSlideIn 0.3s ease;
+}
+
+.admin-alert-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.admin-error-alert p {
+  font-size: 13px;
+  color: #fca5a5;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@keyframes adminSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Floating Label Input Fields */
+.admin-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-input-group {
+  position: relative;
+  width: 100%;
+}
+
+.admin-input-group input {
+  width: 100%;
+  padding: 16px 14px 12px;
+  font-size: 15px;
+  border: 1.5px solid var(--admin-border-color);
+  border-radius: 12px;
+  outline: none;
+  background: transparent;
+  color: var(--admin-text-light);
+  transition: all 0.2s ease;
+}
+
+.admin-input-group input[type="password"]::-ms-reveal,
+.admin-input-group input[type="password"]::-ms-clear {
+  display: none;
+}
+
+.admin-input-group label {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  color: var(--admin-text-muted);
+  pointer-events: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #0f172a;
+  padding: 0 4px;
+}
+
+/* Float label when focused or non-empty */
+.admin-input-group input:focus,
+.admin-input-group input:not(:placeholder-shown) {
+  border-color: var(--admin-primary);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+.admin-input-group input:focus ~ label,
+.admin-input-group input:not(:placeholder-shown) ~ label {
+  top: 0;
+  font-size: 12px;
+  color: var(--admin-primary);
+  font-weight: 600;
+}
+
+/* Password eye button positioning */
+.admin-password-group {
+  display: flex;
+  align-items: center;
+}
+
+.admin-password-group input {
+  padding-right: 48px;
+}
+
+.admin-password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--admin-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.admin-password-toggle-btn:hover {
+  color: var(--admin-text-light);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Admin Login Action Button */
+.admin-login-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--admin-primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+  margin-top: 8px;
+}
+
+.admin-login-btn:hover:not(:disabled) {
+  background: var(--admin-primary-hover);
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.35);
+  transform: translateY(-1px);
+}
+
+.admin-login-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.admin-login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Demo Credentials Box */
+.admin-demo-credentials-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed var(--admin-border-color);
+  border-radius: 12px;
+  padding: 10px;
+  margin-top: 16px;
+}
+
+.admin-demo-badge {
+  background: rgba(249, 115, 22, 0.12);
+  color: #f97316;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.admin-demo-link {
+  background: none;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--admin-accent);
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.admin-demo-link:hover {
+  color: #ea580c;
+  text-decoration: underline;
+}
+
+/* Footer Section */
+.admin-login-footer {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.admin-login-footer p {
+  font-size: 13px;
+  color: var(--admin-text-muted);
+}
+
+.admin-staff-link {
+  color: var(--admin-accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.admin-staff-link:hover {
+  color: #ea580c;
+  text-decoration: underline;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .admin-login-container {
+    width: 480px;
+  }
+  .admin-brand-panel {
+    display: none;
+  }
+  .admin-login-form-panel {
+    flex: 1;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .admin-login-page-wrapper {
+    padding: 10px;
+  }
+  .admin-login-container {
+    border-radius: 16px;
+  }
+  .admin-login-form-panel {
+    padding: 30px 20px;
+  }
+}

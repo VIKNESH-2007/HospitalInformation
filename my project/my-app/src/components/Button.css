@@ -1,0 +1,37 @@
+.btn{
+    padding:12px 24px;
+    border:none;
+    border-radius:8px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+    margin:5px;
+}
+
+.primary{
+    background:#1976d2;
+    color:white;
+}
+
+.primary:hover{
+    background:#1565c0;
+}
+
+.success{
+    background:#4caf50;
+    color:white;
+}
+
+.success:hover{
+    background:#388e3c;
+}
+
+.danger{
+    background:#f44336;
+    color:white;
+}
+
+.danger:hover{
+    background:#d32f2f;
+}

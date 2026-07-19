@@ -1,0 +1,10 @@
+# React
+**/node_modules/
+**/build/
+**/dist/
+
+# .NET
+**/bin/
+**/obj/
+.vs/
+.idea/

@@ -1,0 +1,21 @@
+.select-group{
+display:flex;
+flex-direction:column;
+}
+
+.select-group label{
+margin-bottom:8px;
+font-weight:600;
+}
+
+.select-group select{
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:15px;
+}
+
+.select-group select:focus{
+outline:none;
+border-color:#1976d2;
+}

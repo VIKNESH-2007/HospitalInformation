@@ -1,0 +1,29 @@
+.home{
+
+background:white;
+
+padding:50px;
+
+border-radius:15px;
+
+text-align:center;
+
+box-shadow:0 5px 20px rgba(0,0,0,.15);
+
+}
+
+.home h1{
+
+color:#1565c0;
+
+margin-bottom:20px;
+
+}
+
+.home p{
+
+font-size:18px;
+
+line-height:1.7;
+
+}

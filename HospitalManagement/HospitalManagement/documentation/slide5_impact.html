@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HIMS Slide 5 - Impact & Benefits</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        html, body {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            width: 1000px;
+            height: 562px;
+            background-color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+        }
+        .slide-container {
+            width: 1000px;
+            height: 562px;
+            border: 8px solid #002d62;
+            box-sizing: border-box;
+            background-color: #f4f7f9;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Headers */
+        .top-header {
+            background-color: #002d62;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .sub-header {
+            background-color: #0d233a;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #328cc1;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .main-content {
+            display: flex;
+            flex: 1;
+            padding: 8px;
+            gap: 8px;
+            box-sizing: border-box;
+            height: calc(100% - 58px);
+        }
+
+        /* Column Title Bar */
+        .column-title {
+            background-color: #004b87;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+            padding: 5px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        /* Left Panel - Impact */
+        .panel {
+            background-color: #ffffff;
+            border: 1px solid #d1dbdf;
+            border-radius: 6px;
+            padding: 8px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        .left-panel {
+            width: 440px;
+        }
+        .right-panel {
+            flex: 1;
+        }
+
+        .impact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex-grow: 1;
+            justify-content: center;
+        }
+        .impact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 5px 8px;
+            background-color: #fafbfc;
+        }
+        .impact-icon {
+            font-size: 16px;
+            background-color: #eef6fc;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .impact-text {
+            font-size: 11px;
+            line-height: 1.3;
+        }
+        .impact-text strong {
+            color: #002d62;
+            font-size: 11px;
+            display: block;
+        }
+
+        /* Right Panel - Benefits */
+        .benefits-container {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            height: 100%;
+        }
+        .benefit-section {
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+            padding: 6px 8px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        .sec-patients {
+            border-left: 4px solid #328cc1;
+            background-color: #f7fafc;
+        }
+        .sec-providers {
+            border-left: 4px solid #22c55e;
+            background-color: #f4faf6;
+        }
+        .sec-technical {
+            border-left: 4px solid #8b5cf6;
+            background-color: #f9f7ff;
+        }
+        .benefit-sec-title {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .sec-patients .benefit-sec-title { color: #328cc1; }
+        .sec-providers .benefit-sec-title { color: #15803d; }
+        .sec-technical .benefit-sec-title { color: #6d28d9; }
+        
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3px 15px;
+        }
+        .benefit-item {
+            font-size: 9.5px;
+            color: #334155;
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.25;
+        }
+        .bullet-point {
+            color: #004b87;
+            margin-right: 4px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide-container">
+        <!-- Main Slide Headers -->
+        <div class="top-header">HOSPITAL INFORMATION MANAGEMENT SYSTEM</div>
+        <div class="sub-header">IMPACT & BENEFITS</div>
+
+        <div class="main-content">
+            <!-- Left Column: Impact -->
+            <div class="panel left-panel">
+                <div class="column-title">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    System Impact
+                </div>
+                <div class="impact-list">
+                    <div class="impact-item">
+                        <div class="impact-icon">⚡</div>
+                        <div class="impact-text">
+                            <strong>Faster Patient Onboarding</strong>
+                            Automates registration and scheduling workflows, reducing client wait times.
+                        </div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-icon">🔒</div>
+                        <div class="impact-text">
+                            <strong>HIPAA Security & Compliance</strong>
+                            Ensures medical records are protected through JWT, 2FA, and biometrics.
+                        </div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-icon">👥</div>
+                        <div class="impact-text">
+                            <strong>Deduplicated Health Records</strong>
+                            Uses Levenshtein algorithms to resolve record duplications automatically.
+                        </div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-icon">📄</div>
+                        <div class="impact-text">
+                            <strong>Paperless Clinical Records</strong>
+                            Secures digitised record storage, billing audits, and inventory management.
+                        </div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-icon">📉</div>
+                        <div class="impact-text">
+                            <strong>Reduced Administrative Costs</strong>
+                            Eliminates manual entry errors and speeds up clinic decision loops.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Benefits -->
+            <div class="panel right-panel">
+                <div class="column-title">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Benefits Realization
+                </div>
+                
+                <div class="benefits-container">
+                    <!-- For Patients -->
+                    <div class="benefit-section sec-patients">
+                        <div class="benefit-sec-title">
+                            👤 For Patients
+                        </div>
+                        <div class="benefit-grid">
+                            <div class="benefit-item"><span class="bullet-point">▸</span>Easy online registration & profile lookup</div>
+                            <div class="benefit-item"><span class="bullet-point">▸</span>Secure login to clinical histories</div>
+                            <div class="benefit-item"><span class="bullet-point">▸</span>Real-time appointment alerts</div>
+                            <div class="benefit-item"><span class="bullet-point">▸</span>Accurate billing & payment receipts</div>
+                        </div>
+                    </div>
+
+                    <!-- For Providers -->
+                    <div class="benefit-section sec-providers">
+                        <div class="benefit-sec-title">
+                            🏥 For Hospital & Clinical Providers
+                        </div>
+                        <div class="benefit-grid">
+                            <div class="benefit-item"><span class="bullet-point">▸</span>Unified medical history view per patient</div>
+                            <div class="benefit-item"><span class="bullet-point">▸</span>Centralised lab & pharmacy inventory</div>
+                            <div class="benefit-item"><span class="bullet-point">▸</span>Biometric patient check-in checks</div>
+                            <div class="benefit-item"><span class="bullet-point">▸</span>HIPAA compliant logs and audit trails</div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Benefits -->
+                    <div class="benefit-section sec-technical" style="margin-bottom: 0;">
+                        <div class="benefit-sec-title">
+                            ⚙️ Technical Benefits
+                        </div>
+                        <div class="benefit-grid">
+                            <div class="benefit-item"><span class="bullet-point">▸</span>Secure RESTful API design</div>
+                            <div class="benefit-item"><span class="bullet-point">▸</span>Centralised MySQL database</div>
+                            <div class="benefit-item"><span class="bullet-point">▸</span>Role-based access controls (RBAC)</div>
+                            <div class="benefit-item"><span class="bullet-point">▸</span>Responsive React.js & Vite build</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+}
+
+.page-container{
+    min-height:100vh;
+    padding:30px;
+
+    background:
+        linear-gradient(
+            rgba(10,30,60,0.55),
+            rgba(10,30,60,0.55)
+        ),
+        url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1920&q=80");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+.page-title{
+    color:white;
+    font-size:40px;
+    margin-bottom:30px;
+    text-align:center;
+}
+
+.content-card{
+    background:rgba(255,255,255,0.9);
+    border-radius:20px;
+    padding:30px;
+    backdrop-filter:blur(5px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}

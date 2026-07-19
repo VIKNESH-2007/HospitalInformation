@@ -1,0 +1,13 @@
+
+
+.confirm{
+    background:white;
+    padding:20px;
+    width:400px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.confirm button{
+    margin:10px;
+}
