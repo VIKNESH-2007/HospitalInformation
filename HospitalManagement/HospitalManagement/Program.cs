@@ -57,6 +57,14 @@ using (var scope = app.Services.CreateScope())
     try { context.Database.ExecuteSqlRaw("ALTER TABLE Appointments ADD COLUMN ReservedTimestamp DATETIME NULL;"); } catch {}
     try { context.Database.ExecuteSqlRaw("ALTER TABLE Appointments ADD COLUMN LockExpiresAt DATETIME NULL;"); } catch {}
 
+    // Self-healing database schema migrations for Billings columns
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Billings ADD COLUMN MedicineName VARCHAR(255) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Billings ADD COLUMN MedicineQuantity INT NOT NULL DEFAULT 0;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Billings ADD COLUMN PrescriptionId INT NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Billings ADD COLUMN IsOverridden TINYINT(1) NOT NULL DEFAULT 0;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Billings ADD COLUMN OverrideReason VARCHAR(500) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Billings ADD COLUMN Status VARCHAR(50) NULL;"); } catch {}
+
     // Seed Demo Users if they do not exist
     if (!context.Users.Any())
     {
