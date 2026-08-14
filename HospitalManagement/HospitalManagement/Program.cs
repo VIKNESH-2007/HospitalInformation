@@ -16,14 +16,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<HospitalDbContext>(
     options =>
         options.UseMySql(
-            builder.Configuration.GetConnectionString(
-                "DefaultConnection"
-            ),
-            ServerVersion.AutoDetect(
-                builder.Configuration.GetConnectionString(
-                    "DefaultConnection"
-                )
-            )
+            builder.Configuration.GetConnectionString("DefaultConnection"),
+            new MySqlServerVersion(new Version(8, 0, 31))
         )
 );
 
