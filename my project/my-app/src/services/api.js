@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Standard Axios Client pointing to your ASP.NET backend (configured for active port 5000)
 const api = axios.create({
-  baseURL: "http://localhost:5004/api"
+  baseURL: "http://localhost:5000/api"
 });
 
 // Request Interceptor: Attach JWT Token

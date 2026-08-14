@@ -7,7 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 var builder = WebApplication.CreateBuilder(args);
 
 // Explicitly set the URLs to avoid port conflicts during development
-builder.WebHost.UseUrls("http://127.0.0.1:5004");
+builder.WebHost.UseUrls("http://127.0.0.1:5000");
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
