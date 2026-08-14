@@ -177,10 +177,9 @@ function Home() {
 
       {/* Quick Action Navigation Footer */}
       <div className="quick-actions-bar">
-        <h3>Need Immediate Assistance?</h3>
+        <h3>Command Center Settings</h3>
         <div className="action-buttons">
           <button className="btn-primary" onClick={() => navigate("/profile")}>Update Profile Info</button>
-          <a href="tel:9566206847" className="btn-secondary">Emergency Hotline: 9566206847</a>
         </div>
       </div>
     </div>
