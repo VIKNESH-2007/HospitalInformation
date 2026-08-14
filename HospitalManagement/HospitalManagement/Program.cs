@@ -65,6 +65,28 @@ using (var scope = app.Services.CreateScope())
     try { context.Database.ExecuteSqlRaw("ALTER TABLE Billings ADD COLUMN OverrideReason VARCHAR(500) NULL;"); } catch {}
     try { context.Database.ExecuteSqlRaw("ALTER TABLE Billings ADD COLUMN Status VARCHAR(50) NULL;"); } catch {}
 
+    // Self-healing database schema migrations for Patients columns
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN NameAlias VARCHAR(255) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN PhoneSecondary VARCHAR(50) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN EmailSecondary VARCHAR(255) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN BloodGroup VARCHAR(10) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN FatherName VARCHAR(255) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN MotherName VARCHAR(255) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN SpouseName VARCHAR(255) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN IdProof VARCHAR(100) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN AadharNumber VARCHAR(100) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN PanCard VARCHAR(100) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN VoterId VARCHAR(100) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN DrivingLicense VARCHAR(100) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN PermanentAddress VARCHAR(500) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN PatientPhoto LONGTEXT NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN PhotoUploadDate DATETIME NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN BiometricTemplate LONGTEXT NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN FaceEmbedding LONGTEXT NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN Occupation VARCHAR(255) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN EmployerName VARCHAR(255) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN IsArchived TINYINT(1) NOT NULL DEFAULT 0;"); } catch {}
+
     // Seed Demo Users if they do not exist
     if (!context.Users.Any())
     {
