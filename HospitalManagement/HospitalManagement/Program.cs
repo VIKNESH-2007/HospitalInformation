@@ -50,6 +50,13 @@ using (var scope = app.Services.CreateScope())
     var context = scope.ServiceProvider.GetRequiredService<HospitalDbContext>();
     context.Database.EnsureCreated();
 
+    // Self-healing database schema migrations for Appointments columns
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Appointments ADD COLUMN DoctorId INT NOT NULL DEFAULT 0;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Appointments ADD COLUMN PatientId INT NOT NULL DEFAULT 0;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Appointments ADD COLUMN ReservedByUserId INT NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Appointments ADD COLUMN ReservedTimestamp DATETIME NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Appointments ADD COLUMN LockExpiresAt DATETIME NULL;"); } catch {}
+
     // Seed Demo Users if they do not exist
     if (!context.Users.Any())
     {
