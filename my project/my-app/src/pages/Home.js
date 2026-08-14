@@ -56,8 +56,11 @@ function Home() {
 
       {/* Metric Quick Stats Grid */}
       <div className="stats-grid">
-        <div className="stat-card blue-gradient" onClick={() => navigate("/appointments")}>
-          <div className="stat-icon">📅</div>
+        <div className="stat-card blue-glow" onClick={() => navigate("/appointments")}>
+          <div className="stat-header">
+            <div className="stat-icon">📅</div>
+            <span className="stat-pill blue-pill">Active</span>
+          </div>
           <div className="stat-info">
             <h3>My Appointments</h3>
             <p>Schedule and track consults</p>
@@ -65,8 +68,11 @@ function Home() {
           </div>
         </div>
 
-        <div className="stat-card green-gradient" onClick={() => navigate("/medical-records")}>
-          <div className="stat-icon">📁</div>
+        <div className="stat-card green-glow" onClick={() => navigate("/medical-records")}>
+          <div className="stat-header">
+            <div className="stat-icon">📁</div>
+            <span className="stat-pill green-pill">Secure</span>
+          </div>
           <div className="stat-info">
             <h3>Medical Records</h3>
             <p>View prescription history & reports</p>
@@ -74,8 +80,11 @@ function Home() {
           </div>
         </div>
 
-        <div className="stat-card purple-gradient" onClick={() => navigate("/doctors")}>
-          <div className="stat-icon">👨‍⚕️</div>
+        <div className="stat-card purple-glow" onClick={() => navigate("/doctors")}>
+          <div className="stat-header">
+            <div className="stat-icon">👨‍⚕️</div>
+            <span className="stat-pill purple-pill">Online</span>
+          </div>
           <div className="stat-info">
             <h3>Consult Doctors</h3>
             <p>Find speciality specialists</p>
@@ -83,8 +92,11 @@ function Home() {
           </div>
         </div>
 
-        <div className="stat-card orange-gradient" onClick={() => navigate("/treatments")}>
-          <div className="stat-icon">⚡</div>
+        <div className="stat-card orange-glow" onClick={() => navigate("/treatments")}>
+          <div className="stat-header">
+            <div className="stat-icon">⚡</div>
+            <span className="stat-pill orange-pill">Live</span>
+          </div>
           <div className="stat-info">
             <h3>Treatments Queue</h3>
             <p>Live procedure delay updates</p>

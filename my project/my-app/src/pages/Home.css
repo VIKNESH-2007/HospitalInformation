@@ -1,19 +1,29 @@
-/* Home.css - Premium Dashboard Design System */
+/* Home.css - Premium Glassmorphic Hospital Design System */
 
 .home-dashboard {
   display: flex;
   flex-direction: column;
   gap: 30px;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px;
+  margin: 10px auto;
+  padding: 30px;
   font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: #f1f5f9;
+  
+  /* High-end Hospital Scene Overlay Background */
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.95) 100%), 
+              url('/hospital_scenary_bg.jpg') no-repeat center center;
+  background-size: cover;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
 }
 
 /* Hero Banner */
 .hero-banner {
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   padding: 40px;
@@ -22,7 +32,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .hero-banner::after {
@@ -99,7 +109,7 @@
 }
 
 .floating-card {
-  background: rgba(30, 41, 59, 0.85);
+  background: rgba(15, 23, 42, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 15px 20px;
   border-radius: 16px;
@@ -107,7 +117,7 @@
   align-items: center;
   gap: 15px;
   backdrop-filter: blur(12px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
   z-index: 3;
 }
 
@@ -131,74 +141,144 @@
 /* Metric Cards Stats Grid */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
 }
 
+/* Glassmorphism Stat Cards with Colored Left Border Glow */
 .stat-card {
+  background: rgba(30, 41, 59, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 20px;
-  padding: 25px;
+  padding: 24px;
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
   position: relative;
   overflow: hidden;
 }
 
-.stat-card::before {
+.stat-card::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.stat-card:hover::before {
+.stat-card:hover::after {
   opacity: 1;
 }
 
 .stat-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  transform: translateY(-6px);
+  background: rgba(30, 41, 59, 0.7);
 }
 
-.blue-gradient {
-  background: linear-gradient(135deg, #1e3a8a 0%, #172554 100%);
+/* Specific glows */
+.blue-glow {
+  border-left: 4px solid #3b82f6;
+}
+.blue-glow:hover {
+  box-shadow: 0 12px 35px rgba(59, 130, 246, 0.2);
+  border-left-color: #60a5fa;
 }
 
-.green-gradient {
-  background: linear-gradient(135deg, #065f46 0%, #022c22 100%);
+.green-glow {
+  border-left: 4px solid #10b981;
+}
+.green-glow:hover {
+  box-shadow: 0 12px 35px rgba(16, 185, 129, 0.2);
+  border-left-color: #34d399;
 }
 
-.purple-gradient {
-  background: linear-gradient(135deg, #581c87 0%, #2e1065 100%);
+.purple-glow {
+  border-left: 4px solid #8b5cf6;
+}
+.purple-glow:hover {
+  box-shadow: 0 12px 35px rgba(139, 92, 246, 0.2);
+  border-left-color: #a78bfa;
 }
 
-.orange-gradient {
-  background: linear-gradient(135deg, #7c2d12 0%, #431407 100%);
+.orange-glow {
+  border-left: 4px solid #f97316;
+}
+.orange-glow:hover {
+  box-shadow: 0 12px 35px rgba(249, 115, 22, 0.2);
+  border-left-color: #fb923c;
+}
+
+/* Stat Header & Icon */
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 .stat-icon {
-  font-size: 32px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 12px;
-  border-radius: 14px;
-}
-
-.stat-info {
+  font-size: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
-  height: 100%;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
 }
 
+.stat-card:hover .stat-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.stat-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.blue-pill {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.green-pill {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.purple-pill {
+  background: rgba(139, 92, 246, 0.15);
+  color: #a78bfa;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.orange-pill {
+  background: rgba(249, 115, 22, 0.15);
+  color: #fb923c;
+  border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+/* Stat Info Details */
 .stat-info h3 {
   margin: 0 0 6px 0;
   font-size: 18px;
@@ -219,6 +299,7 @@
   color: #ffffff;
   margin-top: auto;
   transition: transform 0.2s ease;
+  display: inline-block;
 }
 
 .stat-card:hover .action-link {
@@ -239,7 +320,9 @@
 }
 
 .panel {
-  background: #1e293b;
+  background: rgba(30, 41, 59, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   padding: 30px;
@@ -360,7 +443,9 @@
 
 /* Assistant Footer Bar */
 .quick-actions-bar {
-  background: linear-gradient(90deg, #1e1b4b 0%, #311042 100%);
+  background: linear-gradient(90deg, rgba(30, 27, 75, 0.6) 0%, rgba(49, 16, 66, 0.6) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   padding: 30px;
