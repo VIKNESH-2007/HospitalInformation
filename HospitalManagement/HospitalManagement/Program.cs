@@ -152,6 +152,29 @@ using (var scope = app.Services.CreateScope())
            OR OverrideReason IS NULL 
            OR Status IS NULL;"); } catch {}
 
+    // Self-healing database schema migrations for Doctors columns
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Doctors ADD COLUMN Name VARCHAR(255) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Doctors ADD COLUMN Department VARCHAR(255) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Doctors ADD COLUMN Experience INT NOT NULL DEFAULT 0;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Doctors ADD COLUMN Phone VARCHAR(50) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Doctors ADD COLUMN Email VARCHAR(255) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Doctors ADD COLUMN Qualification VARCHAR(255) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Doctors ADD COLUMN Availability VARCHAR(100) NULL;"); } catch {}
+    try { context.Database.ExecuteSqlRaw("ALTER TABLE Doctors ADD COLUMN ConsultationFee DECIMAL(18,2) NOT NULL DEFAULT 150.00;"); } catch {}
+
+    // Data-repair healing migrations to convert NULLs to empty strings for Doctors table
+    try { context.Database.ExecuteSqlRaw(@"
+        UPDATE Doctors SET 
+            Name = COALESCE(Name, ''),
+            Department = COALESCE(Department, ''),
+            Phone = COALESCE(Phone, ''),
+            Email = COALESCE(Email, ''),
+            Qualification = COALESCE(Qualification, ''),
+            Availability = COALESCE(Availability, '')
+        WHERE Name IS NULL 
+           OR Department IS NULL 
+           OR Phone IS NULL;"); } catch {}
+
     // Seed Demo Users if they do not exist
     if (!context.Users.Any())
     {
