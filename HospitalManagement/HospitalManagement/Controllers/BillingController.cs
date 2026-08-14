@@ -88,8 +88,21 @@ namespace HospitalAPI.Controllers
             // 3. Amount Mismatches
             // A. Consultation Fee
             var docNameClean = req.DoctorName.Replace(" ", "").Replace("dr.", "").Replace("dr", "").ToLower();
-            var doctor = _context.Doctors.ToList()
-                .FirstOrDefault(d => d.Name.Replace(" ", "").Replace("dr.", "").Replace("dr", "").ToLower() == docNameClean);
+            
+            // Database-side pre-filtering to prevent full catalog load
+            var doctorPart = req.DoctorName.Split(' ').FirstOrDefault(x => x.Length > 2 && !x.ToLower().Contains("dr"));
+            var doctorsQuery = _context.Doctors.AsQueryable();
+            if (!string.IsNullOrEmpty(doctorPart))
+            {
+                doctorsQuery = doctorsQuery.Where(d => d.Name.Contains(doctorPart));
+            }
+            var doctorsList = doctorsQuery.ToList();
+            if (doctorsList.Count == 0)
+            {
+                doctorsList = _context.Doctors.ToList();
+            }
+
+            var doctor = doctorsList.FirstOrDefault(d => d.Name.Replace(" ", "").Replace("dr.", "").Replace("dr", "").ToLower() == docNameClean);
 
             if (doctor != null)
             {
@@ -112,8 +125,15 @@ namespace HospitalAPI.Controllers
             if (!string.IsNullOrEmpty(req.MedicineName))
             {
                 var medNameClean = req.MedicineName.ToLower().Trim();
-                var med = _context.Medicines.ToList()
-                    .FirstOrDefault(m => m.MedicineName.ToLower().Trim().Contains(medNameClean) || medNameClean.Contains(m.MedicineName.ToLower().Trim()));
+                
+                // Database-side pre-filtering
+                var medicinesList = _context.Medicines.Where(m => m.MedicineName.Contains(medNameClean) || medNameClean.Contains(m.MedicineName)).ToList();
+                if (medicinesList.Count == 0)
+                {
+                    medicinesList = _context.Medicines.ToList();
+                }
+
+                var med = medicinesList.FirstOrDefault(m => m.MedicineName.ToLower().Trim().Contains(medNameClean) || medNameClean.Contains(m.MedicineName.ToLower().Trim()));
 
                 if (med != null)
                 {
