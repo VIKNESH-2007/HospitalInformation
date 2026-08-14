@@ -482,11 +482,13 @@ function Appointments() {
                                                     text={t("view")}
                                                     onClick={() => handleView(appointment)}
                                                 />
-                                                <Button
-                                                    text="Toggle Status"
-                                                    type="success"
-                                                    onClick={() => handleUpdate(appointment)}
-                                                />
+                                                {(userRole === "admin" || userRole === "staff") && (
+                                                    <Button
+                                                        text="Toggle Status"
+                                                        type="success"
+                                                        onClick={() => handleUpdate(appointment)}
+                                                    />
+                                                )}
                                                 <Button
                                                     text="Cancel"
                                                     type="danger"
