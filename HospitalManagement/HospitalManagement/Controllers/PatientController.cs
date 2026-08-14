@@ -109,6 +109,43 @@ namespace HospitalAPI.Controllers
                 query = query.Where(p => !p.IsArchived);
             }
 
+            // High Performance DB pre-filtering to prevent loading all patient records in-memory
+            if (!string.IsNullOrEmpty(hospitalId))
+            {
+                query = query.Where(p => p.HospitalId.Contains(hospitalId));
+            }
+            if (!string.IsNullOrEmpty(phone))
+            {
+                query = query.Where(p => p.Phone.Contains(phone) || (p.PhoneSecondary != null && p.PhoneSecondary.Contains(phone)));
+            }
+            if (!string.IsNullOrEmpty(aadhar))
+            {
+                query = query.Where(p => p.AadharNumber.Contains(aadhar));
+            }
+            if (!string.IsNullOrEmpty(dob) && DateTime.TryParse(dob, out var dobValFilter))
+            {
+                query = query.Where(p => p.DOB.Date == dobValFilter.Date);
+            }
+            if (!string.IsNullOrEmpty(fatherName))
+            {
+                query = query.Where(p => p.FatherName.Contains(fatherName));
+            }
+            if (!string.IsNullOrEmpty(city))
+            {
+                query = query.Where(p => p.City.Contains(city));
+            }
+            if (!string.IsNullOrEmpty(name))
+            {
+                query = query.Where(p =>
+                    p.FirstName.Contains(name) ||
+                    p.LastName.Contains(name) ||
+                    p.Name.Contains(name) ||
+                    (p.NameAlias != null && p.NameAlias.Contains(name)) ||
+                    p.Email.Contains(name) ||
+                    (p.EmailSecondary != null && p.EmailSecondary.Contains(name))
+                );
+            }
+
             var allPatients = query.ToList();
             var results = new List<object>();
 

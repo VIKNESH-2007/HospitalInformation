@@ -20,12 +20,13 @@ namespace HospitalAPI.Controllers
         [HttpGet]
         public IActionResult GetTreatments()
         {
-            var list = _context.TreatmentSchedules.ToList();
+            // Only fetch active treatments from the DB to check and calculate delay status changes
+            var activeItems = _context.TreatmentSchedules.Where(t => t.Status == "Active").ToList();
             bool changed = false;
 
-            foreach (var item in list)
+            foreach (var item in activeItems)
             {
-                if (item.Status == "Active" && item.ActualStartTime.HasValue)
+                if (item.ActualStartTime.HasValue)
                 {
                     double elapsed = (DateTime.Now - item.ActualStartTime.Value).TotalMinutes;
                     if (elapsed > item.ExpectedDuration)
@@ -41,6 +42,7 @@ namespace HospitalAPI.Controllers
                 _context.SaveChanges();
             }
 
+            var list = _context.TreatmentSchedules.ToList();
             return Ok(list);
         }
 
