@@ -1,181 +1,174 @@
 /* ---------- MEDICAL RECORDS PAGE ---------- */
 
-body{
-    margin:0;
-    padding:0;
-    font-family:Arial, Helvetica, sans-serif;
-
-    /* Professional Hospital Background */
-    background-image:
-    linear-gradient(rgba(18,43,74,.55), rgba(18,43,74,.55)),
-    url("https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=80");
-
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-    background-attachment:fixed;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.records-container{
-    max-width:1200px;
-    margin:40px auto;
-    text-align:center;
-    padding:20px;
+.records-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: center;
+    padding: 20px;
 }
 
-.records-title{
-    color:white;
-    font-size:46px;
-    margin-bottom:35px;
-    text-shadow:2px 2px 8px rgba(0,0,0,.4);
+.records-title {
+    color: white;
+    font-size: 46px;
+    margin-bottom: 35px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, .4);
 }
 
-.records-grid{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:25px;
+.records-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
 }
 
-.record-card{
-    width:260px;
-    background:rgba(255,255,255,.95);
-    backdrop-filter:blur(8px);
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
-    transition:.3s;
+.record-card {
+    width: 260px;
+    background: rgba(255, 255, 255, .95);
+    backdrop-filter: blur(8px);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .25);
+    transition: .3s;
 }
 
-.record-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
+.record-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .35);
 }
 
-.record-card h3{
-    color:#0d6efd;
-    margin-bottom:15px;
+.record-card h3 {
+    color: #0d6efd;
+    margin-bottom: 15px;
 }
 
-.record-card p{
-    margin:10px 0;
-    color:#555;
-    line-height:1.6;
+.record-card p {
+    margin: 10px 0;
+    color: #555;
+    line-height: 1.6;
 }
 
-.btn-primary{
-    margin-top:15px;
-    background:#0d6efd;
-    color:white;
-    border:none;
-    padding:12px 22px;
-    border-radius:6px;
-    cursor:pointer;
-    font-size:16px;
-    transition:.3s;
+.btn-primary {
+    margin-top: 15px;
+    background: #0d6efd;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: .3s;
 }
 
-.btn-primary:hover{
-    background:#084298;
-    transform:translateY(-2px);
+.btn-primary:hover {
+    background: #084298;
+    transform: translateY(-2px);
 }
 
 /* ---------- POPUP ---------- */
 
-.modal{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.6);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:1000;
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
-.record-popup{
-    width:650px;
-    background:rgba(255,255,255,.97);
-    backdrop-filter:blur(10px);
-    border-radius:15px;
-    padding:30px;
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
+.record-popup {
+    width: 650px;
+    background: rgba(255, 255, 255, .97);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .35);
 }
 
-.record-popup h2{
-    color:#0d6efd;
-    margin-bottom:20px;
-    text-align:center;
+.record-popup h2 {
+    color: #0d6efd;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 /* ---------- RECORD TABLE ---------- */
 
-.record-table{
-    width:100%;
-    border-collapse:collapse;
+.record-table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
 .record-table th,
-.record-table td{
-    border:1px solid #ddd;
-    padding:12px;
+.record-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
 }
 
-.record-table th{
-    width:35%;
-    background:#0d6efd;
-    color:white;
-    text-align:left;
+.record-table th {
+    width: 35%;
+    background: #0d6efd;
+    color: white;
+    text-align: left;
 }
 
-.record-table tr:nth-child(even){
-    background:#f8fbff;
+.record-table tr:nth-child(even) {
+    background: #f8fbff;
 }
 
-.record-table tr:hover{
-    background:#e6f0ff;
+.record-table tr:hover {
+    background: #e6f0ff;
 }
 
 /* ---------- CLOSE BUTTON ---------- */
 
-.close-btn{
-    margin-top:20px;
-    background:#dc3545;
-    color:white;
-    border:none;
-    padding:12px 30px;
-    border-radius:6px;
-    cursor:pointer;
-    font-size:16px;
-    transition:.3s;
+.close-btn {
+    margin-top: 20px;
+    background: #dc3545 !important;
+    background-image: none !important;
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3) !important;
+    padding: 12px 30px !important;
+    border-radius: 6px !important;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
 }
 
-.close-btn:hover{
-    background:#b02a37;
-    transform:translateY(-2px);
+.close-btn:hover {
+    background: #b02a37 !important;
+    box-shadow: 0 6px 15px rgba(176, 42, 55, 0.4) !important;
+    transform: translateY(-2px);
 }
 
 /* ---------- RESPONSIVE ---------- */
 
-@media (max-width:768px){
-
-    .records-title{
-        font-size:36px;
+@media (max-width: 768px) {
+    .records-title {
+        font-size: 36px;
     }
 
-    .record-card{
-        width:90%;
+    .record-card {
+        width: 90%;
     }
 
-    .record-popup{
-        width:95%;
-        padding:20px;
+    .record-popup {
+        width: 95%;
+        padding: 20px;
     }
 
-    .record-table{
-        display:block;
-        overflow-x:auto;
+    .record-table {
+        display: block;
+        overflow-x: auto;
     }
 }
