@@ -48,7 +48,7 @@ function App() {
         <Route path="/patients" element={<ProtectedRoute allowedRoles={adminAndStaff}><MainLayout><Patients /></MainLayout></ProtectedRoute>} />
         <Route path="/doctors" element={<ProtectedRoute allowedRoles={allRoles}><MainLayout><Doctors /></MainLayout></ProtectedRoute>} />
         <Route path="/appointments" element={<ProtectedRoute allowedRoles={allRoles}><MainLayout><Appointments /></MainLayout></ProtectedRoute>} />
-        <Route path="/treatments" element={<ProtectedRoute allowedRoles={allRoles}><MainLayout><Treatments /></MainLayout></ProtectedRoute>} />
+        <Route path="/treatments" element={<ProtectedRoute allowedRoles={adminAndStaff}><MainLayout><Treatments /></MainLayout></ProtectedRoute>} />
         <Route path="/resources" element={<ProtectedRoute allowedRoles={adminAndStaff}><MainLayout><ResourcesDashboard /></MainLayout></ProtectedRoute>} />
         <Route path="/billing" element={<ProtectedRoute allowedRoles={["Admin"]}><MainLayout><Billing /></MainLayout></ProtectedRoute>} />
         <Route path="/pharmacy" element={<ProtectedRoute allowedRoles={adminAndStaff}><MainLayout><Pharmacy /></MainLayout></ProtectedRoute>} />
