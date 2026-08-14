@@ -104,6 +104,54 @@ using (var scope = app.Services.CreateScope())
     try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN LastModified DATETIME NOT NULL DEFAULT '2026-01-01';"); } catch {}
     try { context.Database.ExecuteSqlRaw("ALTER TABLE Patients ADD COLUMN IsArchived TINYINT(1) NOT NULL DEFAULT 0;"); } catch {}
 
+    // Data-repair healing migrations to convert NULLs to empty strings for non-nullable C# properties
+    try { context.Database.ExecuteSqlRaw(@"
+        UPDATE Patients SET 
+            HospitalId = COALESCE(HospitalId, ''),
+            FirstName = COALESCE(FirstName, ''),
+            MiddleName = COALESCE(MiddleName, ''),
+            LastName = COALESCE(LastName, ''),
+            Name = COALESCE(Name, ''),
+            NameAlias = COALESCE(NameAlias, ''),
+            Gender = COALESCE(Gender, ''),
+            Phone = COALESCE(Phone, ''),
+            PhoneSecondary = COALESCE(PhoneSecondary, ''),
+            Email = COALESCE(Email, ''),
+            EmailSecondary = COALESCE(EmailSecondary, ''),
+            BloodGroup = COALESCE(BloodGroup, ''),
+            FatherName = COALESCE(FatherName, ''),
+            MotherName = COALESCE(MotherName, ''),
+            SpouseName = COALESCE(SpouseName, ''),
+            IdProof = COALESCE(IdProof, ''),
+            AadharNumber = COALESCE(AadharNumber, ''),
+            PanCard = COALESCE(PanCard, ''),
+            VoterId = COALESCE(VoterId, ''),
+            DrivingLicense = COALESCE(DrivingLicense, ''),
+            Address = COALESCE(Address, ''),
+            PermanentAddress = COALESCE(PermanentAddress, ''),
+            City = COALESCE(City, ''),
+            State = COALESCE(State, ''),
+            PinCode = COALESCE(PinCode, ''),
+            Disease = COALESCE(Disease, ''),
+            PatientPhoto = COALESCE(PatientPhoto, ''),
+            BiometricTemplate = COALESCE(BiometricTemplate, ''),
+            FaceEmbedding = COALESCE(FaceEmbedding, ''),
+            Occupation = COALESCE(Occupation, ''),
+            EmployerName = COALESCE(EmployerName, '')
+        WHERE HospitalId IS NULL 
+           OR FirstName IS NULL 
+           OR LastName IS NULL 
+           OR City IS NULL;"); } catch {}
+
+    try { context.Database.ExecuteSqlRaw(@"
+        UPDATE Billings SET 
+            MedicineName = COALESCE(MedicineName, ''),
+            OverrideReason = COALESCE(OverrideReason, ''),
+            Status = COALESCE(Status, '')
+        WHERE MedicineName IS NULL 
+           OR OverrideReason IS NULL 
+           OR Status IS NULL;"); } catch {}
+
     // Seed Demo Users if they do not exist
     if (!context.Users.Any())
     {
